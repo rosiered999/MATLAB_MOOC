@@ -1,0 +1,3 @@
+function N = smallest_multiple(n)
+for i=1:n
+    

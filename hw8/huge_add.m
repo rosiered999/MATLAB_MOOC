@@ -1,0 +1,25 @@
+function res = huge_add(a,b)
+if(str2num(a)>=0 && str2num(b)>=0)
+if(strlength(a)>strlength(b))
+    n = strlength(a);
+    for i=1:strlength(a)-strlength(b)
+        b = strcat(['0'], b);
+    end 
+else
+    n = strlength(b);
+    for i=1:strlength(b)-strlength(a)
+        a = strcat(['0'], a);
+    end
+end
+c =0;
+d = '';
+for i=n:-1:1
+    sum = mod(str2num(a(i))+str2num(b(i))+c,10);
+    c = floor((str2num(a(i))+str2num(b(i))+c)/10);
+    d = strcat(num2str(sum),d);
+end
+res = d;
+elseif(str2num(a)>=0 && str2num(b)>=0)
+else
+    res = '-1';
+end
